@@ -8,7 +8,6 @@ Task::Task(int id, std::string name, std::string startTime,
       category(category.empty() ? "生活" : category),
       remindTime(remindTime.empty() ? startTime : remindTime) {}
 
-// 用管道符 | 作为分隔符进行序列化，方便文件保存
 std::string Task::serialize() const {
     std::stringstream ss;
     ss << id << "|" << name << "|" << startTime << "|"
