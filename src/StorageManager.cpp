@@ -51,12 +51,11 @@ int StorageManager::getNextId(const std::vector<Task>& tasks) {
     return maxId + 1;
 }
 
-// 检查开始时间是否唯一
-// currentTaskId 用于修改任务时排除自身，避免“自己跟自己的开始时间冲突”
+
 bool StorageManager::isStartTimeUnique(const std::vector<Task>& tasks, const std::string& startTime, int currentTaskId) {
     for (const auto& task : tasks) {
         if (task.id != currentTaskId && task.startTime == startTime) {
-            return false; // 启动时间重复
+            return false;
         }
     }
     return true;
