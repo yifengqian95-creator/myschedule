@@ -11,14 +11,12 @@ LoginDialog::LoginDialog(QWidget *parent) : QDialog(parent) {
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
-    // 用户名输入
     QHBoxLayout *userLayout = new QHBoxLayout();
     userLayout->addWidget(new QLabel("用户名:"));
     usernameEdit = new QLineEdit();
     usernameEdit->setPlaceholderText("请输入用户名");
     userLayout->addWidget(usernameEdit);
 
-    // 密码输入
     QHBoxLayout *pwdLayout = new QHBoxLayout();
     pwdLayout->addWidget(new QLabel("密  码:"));
     passwordEdit = new QLineEdit();
@@ -26,7 +24,7 @@ LoginDialog::LoginDialog(QWidget *parent) : QDialog(parent) {
     passwordEdit->setPlaceholderText("请输入密码");
     pwdLayout->addWidget(passwordEdit);
 
-    // 按钮布局
+
     QHBoxLayout *btnLayout = new QHBoxLayout();
     loginBtn = new QPushButton("登录 / 自动注册");
     cancelBtn = new QPushButton("取消");
