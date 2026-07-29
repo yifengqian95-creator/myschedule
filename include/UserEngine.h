@@ -5,10 +5,7 @@
 
 class UserEngine {
 public:
-    // 计算 HASH 值
     static std::string hashPassword(const std::string& password);
-
-    // 验证用户身份
     static bool authenticateOrRegister(const std::string& username, const std::string& password);
 };
 
