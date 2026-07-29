@@ -1,0 +1,4 @@
+/home/code/myschedule/build/CMakeFiles/myschedule.dir
+/home/code/myschedule/build/CMakeFiles/edit_cache.dir
+/home/code/myschedule/build/CMakeFiles/rebuild_cache.dir
+/home/code/myschedule/build/CMakeFiles/myschedule_autogen.dir

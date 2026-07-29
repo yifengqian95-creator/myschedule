@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+
+  <!-- ================= 1. 窗口整体尺寸设置 ================= -->
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>600</height>
+   </rect>
+  </property>
+
+  <!-- 窗口标题 -->
+  <property name="windowTitle">
+   <string>My Schedule Manager</string>
+  </property>
+
+  <!-- ================= 2. 全局美化（样式表） ================= -->
+  <property name="styleSheet">
+   <string>
+    /* 整个窗口的背景色 */
+    QMainWindow { background-color: #f4f4f9; }
+
+    /* 日历控件的样式 */
+    QCalendarWidget { background-color: white; border: 1px solid #ddd; border-radius: 8px; padding: 5px; }
+
+    /* 任务列表的样式 */
+    QListWidget { background-color: white; border: 1px solid #ddd; border-radius: 8px; padding: 5px; }
+
+    /* 输入框的样式 */
+    QLineEdit { background-color: #ffffff; border: 1px solid #ccc; border-radius: 4px; padding: 5px; }
+
+    /* 添加按钮的样式 */
+    QPushButton#btnAdd { background-color: #4CAF50; color: white; border: none; border-radius: 5px; padding: 10px; font-weight: bold; }
+    QPushButton#btnAdd:hover { background-color: #45a049; }
+
+    /* 删除按钮的样式 */
+    QPushButton#btnDelete { background-color: #f44336; color: white; border: none; border-radius: 5px; padding: 10px; font-weight: bold; }
+    QPushButton#btnDelete:hover { background-color: #da190b; }
+   </string>
+  </property>
+
+  <!-- ================= 3. 中心区域布局 ================= -->
+  <widget class="QWidget" name="centralwidget">
+   <!-- 最外层水平布局：将界面分为左右两半 -->
+   <layout class="QHBoxLayout" name="horizontalLayout_main">
+
+    <!-- ========== 左侧区域：日历 + 任务列表 ========== -->
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_left">
+
+      <!-- 【日历控件】 -->
+      <item>
+       <widget class="QCalendarWidget" name="calendarWidget">
+        <!-- 【尺寸策略】 -->
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+
+      <!-- 【任务列表控件】 -->
+      <item>
+       <widget class="QListWidget" name="taskListWidget">
+        <!-- 【尺寸策略】 -->
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>2</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+
+    <!-- ========== 右侧区域：详情 + 按钮 ========== -->
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_right">
+
+      <!-- 【任务名称标签】 -->
+      <item>
+       <widget class="QLabel" name="label_name">
+        <property name="text"><string>📝 任务名称：</string></property>
+       </widget>
+      </item>
+      <!-- 【任务名称输入框】 -->
+      <item>
+       <widget class="QLineEdit" name="lineEdit_name">
+        <property name="readOnly"><bool>true</bool></property>
+       </widget>
+      </item>
+
+      <!-- 【开始时间标签】 -->
+      <item>
+       <widget class="QLabel" name="label_time">
+        <property name="text"><string>⏰ 开始时间：</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_time">
+        <property name="readOnly"><bool>true</bool></property>
+       </widget>
+      </item>
+
+      <!-- 【优先级标签】 -->
+      <item>
+       <widget class="QLabel" name="label_priority">
+        <property name="text"><string>🔥 优先级：</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_priority">
+        <property name="readOnly"><bool>true</bool></property>
+       </widget>
+      </item>
+
+      <!-- 【垂直弹簧】 -->
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation"><enum>Qt::Vertical</enum></property>
+       </spacer>
+      </item>
+
+      <!-- 【添加按钮】 -->
+      <item>
+       <widget class="QPushButton" name="btnAdd">
+        <property name="text"><string>➕ 添加任务</string></property>
+        <!-- 【强制尺寸】：
+        <property name="minimumSize"><size><width>0</width><height>45</height></size></property> -->
+       </widget>
+      </item>
+
+      <!-- 【删除按钮】 -->
+      <item>
+       <widget class="QPushButton" name="btnDelete">
+        <property name="text"><string>❌ 删除任务</string></property>
+       </widget>
+      </item>
+
+      <!-- 【底部提示标签】alignment 表示文字居中对齐 -->
+      <item>
+       <widget class="QLabel" name="lblStatus">
+        <property name="text"><string>💡 提示：双击任务可查看详情</string></property>
+        <property name="alignment"><enum>Qt::AlignCenter</enum></property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
+
